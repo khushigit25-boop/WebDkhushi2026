@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FlavorHouse - Food Menu</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-slate-50 text-slate-800">
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="bg-white border-b">
+
+    <div class="max-w-6xl mx-auto px-6 py-5
+                flex justify-between items-center">
+
+      <!-- Restaurant Name -->
+
+      <div>
+        <h1 class="text-2xl font-bold text-orange-500">
+          Flavor<span class="text-slate-800">House</span>
+        </h1>
+
+        <p class="text-xs text-slate-400">
+          Fresh food, happy mood
+        </p>
+      </div>
+
+
+      <!-- Header Button -->
+
+      <button
+        class="bg-orange-500 text-white px-5 py-2
+               rounded-full hover:bg-orange-600
+               transition duration-300">
+
+        Order Now
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ================= MAIN SECTION ================= -->
+
+  <main class="max-w-6xl mx-auto px-6 py-16">
+
+
+    <!-- ================= HEADING ================= -->
+
+    <div class="text-center mb-12">
+
+      <p class="text-orange-500 font-semibold uppercase
+                tracking-widest text-sm">
+
+        Our Menu
+
+      </p>
+
+
+      <h2 class="text-4xl md:text-5xl font-bold mt-2">
+
+        Popular Dishes
+
+      </h2>
+
+
+      <p class="text-slate-500 max-w-xl mx-auto mt-4">
+
+        Fresh ingredients, delicious flavors and dishes
+        prepared specially for you.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- ================= FOOD GRID ================= -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+
+      <!-- ================= CARD 1 ================= -->
+
+      <div
+        class="bg-white rounded-2xl overflow-hidden
+               shadow-md hover:shadow-xl
+               hover:-translate-y-2
+               transition duration-300">
+
+
+        <!-- Food Image -->
+
+        <div class="h-52 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+            alt="Classic Pizza"
+            class="w-full h-full object-cover
+                   hover:scale-110
+                   transition duration-500">
+
+        </div>
+
+
+        <!-- Card Content -->
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center">
+
+            <h3 class="text-xl font-bold">
+              Classic Pizza
+            </h3>
+
+            <span class="text-orange-500 font-bold">
+              ₹299
+            </span>
+
+          </div>
+
+
+          <p class="text-slate-500 text-sm
+                    mt-3 leading-6">
+
+            Crispy homemade crust topped with
+            tomato sauce, mozzarella cheese and
+            fresh herbs.
+
+          </p>
+
+
+          <button
+            class="w-full mt-5 bg-slate-900
+                   text-white py-3 rounded-lg
+                   hover:bg-orange-500
+                   transition duration-300">
+
+            Add to Order
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ================= CARD 2 ================= -->
+
+      <div
+        class="bg-white rounded-2xl overflow-hidden
+               shadow-md hover:shadow-xl
+               hover:-translate-y-2
+               transition duration-300">
+
+
+        <div class="h-52 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+            alt="Cheese Burger"
+            class="w-full h-full object-cover
+                   hover:scale-110
+                   transition duration-500">
+
+        </div>
+
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center">
+
+            <h3 class="text-xl font-bold">
+              Cheese Burger
+            </h3>
+
+            <span class="text-orange-500 font-bold">
+              ₹249
+            </span>
+
+          </div>
+
+
+          <p class="text-slate-500 text-sm
+                    mt-3 leading-6">
+
+            Juicy grilled patty with melted cheese,
+            lettuce, tomato and our special
+            house sauce.
+
+          </p>
+
+
+          <button
+            class="w-full mt-5 bg-slate-900
+                   text-white py-3 rounded-lg
+                   hover:bg-orange-500
+                   transition duration-300">
+
+            Add to Order
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ================= CARD 3 ================= -->
+
+      <div
+        class="bg-white rounded-2xl overflow-hidden
+               shadow-md hover:shadow-xl
+               hover:-translate-y-2
+               transition duration-300">
+
+
+        <div class="h-52 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+            alt="Fresh Salad"
+            class="w-full h-full object-cover
+                   hover:scale-110
+                   transition duration-500">
+
+        </div>
+
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center">
+
+            <h3 class="text-xl font-bold">
+              Fresh Salad
+            </h3>
+
+            <span class="text-orange-500 font-bold">
+              ₹179
+            </span>
+
+          </div>
+
+
+          <p class="text-slate-500 text-sm
+                    mt-3 leading-6">
+
+            Fresh vegetables, avocado, olives
+            and crunchy greens served with
+            a light dressing.
+
+          </p>
+
+
+          <button
+            class="w-full mt-5 bg-slate-900
+                   text-white py-3 rounded-lg
+                   hover:bg-orange-500
+                   transition duration-300">
+
+            Add to Order
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ================= CARD 4 ================= -->
+
+      <div
+        class="bg-white rounded-2xl overflow-hidden
+               shadow-md hover:shadow-xl
+               hover:-translate-y-2
+               transition duration-300">
+
+
+        <div class="h-52 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=800&q=80"
+            alt="Creamy Pasta"
+            class="w-full h-full object-cover
+                   hover:scale-110
+                   transition duration-500">
+
+        </div>
+
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center">
+
+            <h3 class="text-xl font-bold">
+              Creamy Pasta
+            </h3>
+
+            <span class="text-orange-500 font-bold">
+              ₹229
+            </span>
+
+          </div>
+
+
+          <p class="text-slate-500 text-sm
+                    mt-3 leading-6">
+
+            Creamy pasta tossed with garlic,
+            parmesan, herbs and freshly ground
+            black pepper.
+
+          </p>
+
+
+          <button
+            class="w-full mt-5 bg-slate-900
+                   text-white py-3 rounded-lg
+                   hover:bg-orange-500
+                   transition duration-300">
+
+            Add to Order
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ================= CARD 5 ================= -->
+
+      <div
+        class="bg-white rounded-2xl overflow-hidden
+               shadow-md hover:shadow-xl
+               hover:-translate-y-2
+               transition duration-300">
+
+
+        <div class="h-52 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+            alt="Sweet Donuts"
+            class="w-full h-full object-cover
+                   hover:scale-110
+                   transition duration-500">
+
+        </div>
+
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center">
+
+            <h3 class="text-xl font-bold">
+              Sweet Donuts
+            </h3>
+
+            <span class="text-orange-500 font-bold">
+              ₹149
+            </span>
+
+          </div>
+
+
+          <p class="text-slate-500 text-sm
+                    mt-3 leading-6">
+
+            Soft and fluffy donuts covered with
+            a sweet glaze and delicious toppings.
+
+          </p>
+
+
+          <button
+            class="w-full mt-5 bg-slate-900
+                   text-white py-3 rounded-lg
+                   hover:bg-orange-500
+                   transition duration-300">
+
+            Add to Order
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ================= CARD 6 ================= -->
+
+      <div
+        class="bg-white rounded-2xl overflow-hidden
+               shadow-md hover:shadow-xl
+               hover:-translate-y-2
+               transition duration-300">
+
+
+        <div class="h-52 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80"
+            alt="Fresh Mocktail"
+            class="w-full h-full object-cover
+                   hover:scale-110
+                   transition duration-500">
+
+        </div>
+
+
+        <div class="p-6">
+
+          <div class="flex justify-between items-center">
+
+            <h3 class="text-xl font-bold">
+              Fresh Mocktail
+            </h3>
+
+            <span class="text-orange-500 font-bold">
+              ₹129
+            </span>
+
+          </div>
+
+
+          <p class="text-slate-500 text-sm
+                    mt-3 leading-6">
+
+            A refreshing blend of fresh fruits,
+            citrus, mint and sparkling water.
+
+          </p>
+
+
+          <button
+            class="w-full mt-5 bg-slate-900
+                   text-white py-3 rounded-lg
+                   hover:bg-orange-500
+                   transition duration-300">
+
+            Add to Order
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- ================= VIEW MENU BUTTON ================= -->
+
+    <div class="text-center mt-12">
+
+      <button
+        class="border-2 border-slate-900
+               px-8 py-3 rounded-full
+               font-semibold
+               hover:bg-slate-900
+               hover:text-white
+               transition duration-300">
+
+        View Full Menu →
+
+      </button>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="bg-slate-900 text-white text-center py-6">
+
+    <p class="text-sm text-slate-400">
+
+      © 2026 FlavorHouse.
+      All Rights Reserved.
+
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
