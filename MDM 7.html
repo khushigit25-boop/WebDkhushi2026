@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College FAQ</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .faq-container {
+            width: 70%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+h2 {
+            text-align: center;
+            color: #333;
+        }
+
+
+
+        .question {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .answer {
+            display: none;
+            background-color: #e9f3ff;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="faq-container">
+
+        <h1>College Department FAQ</h1>
+<h2> IT25084 </h2>
+
+        <div class="question">1. What are the college working hours?</div>
+        <div class="answer">
+            College working hours are generally from 9:00 AM to 5:00 PM.
+        </div>
+
+        <div class="question">2. How can I apply for a leave?</div>
+        <div class="answer">
+            Students can apply for leave through the college portal or by
+            submitting a leave application to the department.
+        </div>
+
+        <div class="question">3. Where can I find the examination timetable?</div>
+        <div class="answer">
+            The examination timetable is available on the college website
+            and department notice board.
+        </div>
+
+        <div class="question">4. How can I contact my department?</div>
+        <div class="answer">
+            You can contact the department office during working hours or
+            email the department coordinator.
+        </div>
+
+        <div class="question">5. How can I get study materials?</div>
+        <div class="answer">
+            Study materials are provided by faculty members through the
+            college LMS or classroom groups.
+        </div>
+
+        <div class="question">6. What should I do if I forget my student ID?</div>
+        <div class="answer">
+            Contact the department office or college administration for help.
+        </div>
+
+        <div class="question">7. How can I check my attendance?</div>
+        <div class="answer">
+            Students can check their attendance through the student portal
+            or by contacting the respective faculty member.
+        </div>
+
+        <div class="question">8. Where can I get information about placements?</div>
+        <div class="answer">
+            Placement information is provided by the Training and Placement
+            Cell through notices, emails and the placement portal.
+        </div>
+
+    </div>
+
+    <script>
+        // Select all questions and answers
+        let questions = document.querySelectorAll(".question");
+
+        // Add click event to every question
+        questions.forEach(function(question) {
+
+            question.addEventListener("click", function() {
+
+                // Get the answer immediately after the question
+                let answer = question.nextElementSibling;
+
+                // Show or hide the answer
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
