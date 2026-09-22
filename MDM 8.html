@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        .form-box {
+            width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+
+        <h2>Student Registration</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <label>Name:</label>
+            <input type="text" id="name">
+
+            <label>Email:</label>
+            <input type="text" id="email">
+
+            <label>Password:</label>
+            <input type="password" id="password">
+
+            <label>Mobile Number:</label>
+            <input type="text" id="mobile">
+
+            <input type="submit" value="Register">
+
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm() {
+
+            // Get values
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let mobile = document.getElementById("mobile").value;
+
+            // Check empty fields
+            if (name == "" || email == "" || password == "" || mobile == "") {
+                alert("Please fill all the fields");
+                return false;
+            }
+
+            // Check email
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email");
+                return false;
+            }
+
+            // Check password
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            // Check mobile number
+            if (mobile.length != 10 || isNaN(mobile)) {
+                alert("Mobile number must contain 10 digits");
+                return false;
+            }
+
+            alert("Registration successful!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>
