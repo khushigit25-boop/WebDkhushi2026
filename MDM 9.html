@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Daily Planner</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen">
+
+    <!-- Main Container -->
+    <div class="max-w-lg mx-auto pt-10 px-4">
+
+        <!-- Heading -->
+        <div class="bg-white rounded-2xl shadow-xl p-6">
+
+            <h1 class="text-3xl font-bold text-center text-purple-600">
+                My Daily Planner
+            </h1>
+
+            <p class="text-center text-gray-500 mt-1 mb-6">
+                Organize • Complete • Achieve
+            </p>
+
+            <!-- Task Input -->
+            <div class="space-y-3">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    class="w-full border rounded-lg px-4 py-3
+                           focus:outline-none focus:ring-2
+                           focus:ring-purple-400"
+                >
+
+                <!-- Priority -->
+                <select
+                    id="priority"
+                    class="w-full border rounded-lg px-4 py-3
+                           focus:outline-none focus:ring-2
+                           focus:ring-purple-400"
+                >
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <button
+                    onclick="addTask()"
+                    class="w-full bg-purple-600 text-white py-3
+                           rounded-lg font-semibold
+                           hover:bg-purple-700"
+                >
+                    + Add Task
+                </button>
+
+            </div>
+
+            <!-- Task Counter -->
+            <div class="flex justify-between items-center mt-6 mb-3">
+                <h2 class="font-semibold text-gray-700">
+                    Today's Tasks
+                </h2>
+
+                <span
+                    id="taskCount"
+                    class="bg-purple-100 text-purple-600
+                           px-3 py-1 rounded-full text-sm"
+                >
+                    0 tasks
+                </span>
+            </div>
+
+            <!-- Task List -->
+            <ul id="taskList" class="space-y-3"></ul>
+
+            <!-- Clear Completed -->
+            <button
+                onclick="clearCompleted()"
+                class="w-full mt-5 border border-red-400
+                       text-red-500 py-2 rounded-lg
+                       hover:bg-red-50"
+            >
+                Clear Completed
+            </button>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        // Add a new task
+        function addTask() {
+
+            const input = document.getElementById("taskInput");
+            const priority = document.getElementById("priority").value;
+
+            const taskText = input.value.trim();
+
+            // Check empty input
+            if (taskText === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            // Create list item
+            const li = document.createElement("li");
+
+            li.className =
+                "bg-gray-50 border rounded-lg p-4 flex " +
+                "items-center justify-between";
+
+            // Choose priority color
+            let priorityColor = "text-green-600";
+
+            if (priority === "Medium") {
+                priorityColor = "text-yellow-600";
+            }
+
+            if (priority === "High") {
+                priorityColor = "text-red-600";
+            }
+
+            // Add task content
+            li.innerHTML = `
+                <div class="flex-1">
+
+                    <p
+                        class="task-name font-medium cursor-pointer"
+                        onclick="completeTask(this)"
+                    >
+                        ${taskText}
+                    </p>
+
+                    <span class="${priorityColor} text-sm">
+                        ${priority} Priority
+                    </span>
+
+                </div>
+
+                <button
+                    onclick="deleteTask(this)"
+                    class="bg-red-500 text-white px-3 py-1
+                           rounded-lg ml-3 hover:bg-red-600"
+                >
+                    Delete
+                </button>
+            `;
+
+            // Add task to list
+            document.getElementById("taskList").appendChild(li);
+
+            // Clear input
+            input.value = "";
+
+            // Update counter
+            updateCount();
+        }
+
+
+        // Mark task as completed
+        function completeTask(task) {
+
+            task.classList.toggle("line-through");
+            task.classList.toggle("text-gray-400");
+
+            updateCount();
+        }
+
+
+        // Delete task
+        function deleteTask(button) {
+
+            button.parentElement.parentElement.remove();
+
+            updateCount();
+        }
+
+
+        // Remove all completed tasks
+        function clearCompleted() {
+
+            const tasks = document.querySelectorAll(".task-name");
+
+            tasks.forEach(function(task) {
+
+                if (task.classList.contains("line-through")) {
+                    task.parentElement.parentElement.remove();
+                }
+
+            });
+
+            updateCount();
+        }
+
+
+        // Update task counter
+        function updateCount() {
+
+            const tasks = document.querySelectorAll("#taskList > li");
+
+            let remaining = 0;
+
+            tasks.forEach(function(task) {
+
+                const name = task.querySelector(".task-name");
+
+                if (!name.classList.contains("line-through")) {
+                    remaining++;
+                }
+
+            });
+
+            document.getElementById("taskCount").innerText =
+                remaining + " tasks";
+        }
+
+
+        // Press Enter to add task
+        document.getElementById("taskInput")
+            .addEventListener("keypress", function(event) {
+
+                if (event.key === "Enter") {
+                    addTask();
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>
